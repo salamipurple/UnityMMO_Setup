@@ -87,9 +87,6 @@ public class Player : NetworkBehaviour
 
         HandleJump();
         HandleMovement();
-
-        cameraHeight += mouseY * mouseSensitivity;
-        cameraHeight = Mathf.Clamp(cameraHeight, cameraHeightMin, cameraHeightMax);
     }
 
     public override void OnDestroy()
@@ -167,6 +164,9 @@ public class Player : NetworkBehaviour
         // Apply movement to the GameObject's position
         // Time.deltaTime ensures movement is frame-rate independent
         transform.Translate(movement * speed * Time.deltaTime, Space.Self);
+
+        cameraHeight += mouseY * mouseSensitivity;
+        cameraHeight = Mathf.Clamp(cameraHeight, cameraHeightMin, cameraHeightMax);
     }
 
     void HandleCamera()
