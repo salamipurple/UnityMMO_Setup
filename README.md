@@ -5,7 +5,11 @@
 Go to cloud.unity.com
 + Set up an organization if you have not already
 
-Package Manger -> Netcode for GameObjects
+#### Add Packages
+
+Package Manger -> Netcode for GameObjects & Multiplayer Services
+
+#### Configure Project Settings
 
 Edit -> Project Settings -> Services
 select organization, create new cloud project, link project
