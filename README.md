@@ -28,4 +28,5 @@ select organization, create new cloud project, link project
 
 
 ## Where we left off...
-Looking at RelayInitializer.cs, RelayClient.cs, and RelayHost.cs to see how to create a one-size-fits-all approach to setting up a Relay networked Unity game.
++ add a player steps on item to increase network variable
++ get player names working

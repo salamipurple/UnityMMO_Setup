@@ -96,7 +96,9 @@ public class RelayHost : MonoBehaviour
 
             joinCode = joinCodeTask.Result;
             Debug.Log($"Host: Successfully retrieved join code: {joinCode}");
-            joinCodeDisplay.text = joinCode;
+
+            if (joinCodeDisplay != null)
+                joinCodeDisplay.text = joinCode;
 
             var serverData = new RelayServerData(
                 alloc.RelayServer.IpV4,
