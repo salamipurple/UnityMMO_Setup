@@ -606,7 +606,7 @@ MonoBehaviour:
   GlobalObjectIdHash: 2978138396
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
-  Ownership: 1
+  Ownership: 7
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -1038,6 +1038,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 553021310408223043, guid: 1911cd232abff47a8ad2613aa82a9f1d, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886532063352632562, guid: 1911cd232abff47a8ad2613aa82a9f1d, type: 3}
+      propertyPath: Ownership
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3886532063352632562, guid: 1911cd232abff47a8ad2613aa82a9f1d, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3886532063352632562, guid: 1911cd232abff47a8ad2613aa82a9f1d, type: 3}

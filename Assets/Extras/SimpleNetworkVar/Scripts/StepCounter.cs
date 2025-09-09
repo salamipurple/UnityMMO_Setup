@@ -38,9 +38,15 @@ public class StepCounter : NetworkBehaviour
         simpleVariableDisplay.UpdateDisplay(simpleVariable.Value);
     }
 
-    void OnMouseDown()
+    [ServerRpc(RequireOwnership = false)]
+    private void IncrementVariableServerRpc()
     {
         simpleVariable.Value += 1;
+    }
+
+    void OnMouseDown()
+    {
+        IncrementVariableServerRpc();
 
         // Debug.Log("Step detected");
     }

@@ -24,6 +24,12 @@ select organization, create new cloud project, link project
 	+ This will automatically add Unity Transport component
 + Add the player prefab to Default Player Prefab in Network Manager
 
+## Start a multiplayer game
+
++ Host via RelayManager "Relay Host" component by clicking the three dots
++ Join via RelayManager "Relay Client" component by clicking the three dots...
+
 ## Where we left off...
+
 + add a player steps on item to increase network variable
 + get player names working
