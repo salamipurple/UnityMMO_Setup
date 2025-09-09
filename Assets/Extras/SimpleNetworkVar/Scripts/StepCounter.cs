@@ -31,7 +31,7 @@ public class StepCounter : NetworkBehaviour
         simpleVariable.OnValueChanged -= OnScoreChanged;
     }
 
-    // Called whenever either score changes, on all clients
+    // Called whenever either score changess, on all clients
     private void OnScoreChanged(int previousValue, int newValue)
     {
         // Update the score display for everyone
@@ -42,6 +42,6 @@ public class StepCounter : NetworkBehaviour
     {
         simpleVariable.Value += 1;
 
-        Debug.Log("Step detected");
+        // Debug.Log("Step detected");
     }
 }
