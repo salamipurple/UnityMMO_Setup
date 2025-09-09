@@ -14,7 +14,6 @@ Package Manger -> Netcode for GameObjects & Multiplayer Services
 Edit -> Project Settings -> Services
 select organization, create new cloud project, link project
 
-
 ## Create a Player prefab
 
 + Add Network Object, Network Transform, Network RigidBody
@@ -24,8 +23,6 @@ select organization, create new cloud project, link project
 + Add Network Manager component and choose Unity Transport
 	+ This will automatically add Unity Transport component
 + Add the player prefab to Default Player Prefab in Network Manager
-
-
 
 ## Where we left off...
 + add a player steps on item to increase network variable
