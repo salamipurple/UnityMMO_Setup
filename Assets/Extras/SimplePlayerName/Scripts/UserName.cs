@@ -6,16 +6,37 @@ using TMPro;
 public class UserName : NetworkBehaviour
 {
     [SerializeField] TextMeshPro userNameDisplay;
-
+    [SerializeField] TextMeshProUGUI userNameInput;
     public static string userName;
-    [SerializeField] private NetworkVariable<FixedString64Bytes> networkUserName = new NetworkVariable<FixedString64Bytes>("USERNAME");
+    [SerializeField] private NetworkVariable<FixedString64Bytes> networkUserName = new NetworkVariable<FixedString64Bytes>(
+        default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
+    public void Awake()
+    {
+        if (GameObject.Find("NameInputText") != null && userNameInput == null)
+        {
+            userNameInput = GameObject.Find("NameInputText").GetComponent<TextMeshProUGUI>();
+        }
+    }
 
     public override void OnNetworkSpawn()
     {
         // Run existing logic in base method
         base.OnNetworkSpawn();
-        // Ensure the user name display is up-to-date when a client joins
-        userNameDisplay.text = networkUserName.Value.ToString();
+
+        if (userNameInput != null)
+        {
+            // Initialize the Network Variable after creation
+            networkUserName = new NetworkVariable<FixedString64Bytes>(userNameInput.text);
+            // Ensure the user name display is up-to-date when a client joins
+            userNameDisplay.text = networkUserName.Value.ToString();
+        }
+        else
+        {
+            networkUserName = new NetworkVariable<FixedString64Bytes>("NO NAME");
+            // Ensure the user name display is up-to-date when a client joins
+            userNameDisplay.text = networkUserName.Value.ToString(); 
+        }
     }
 
     // Subscribe to score changes when this object is enabled
@@ -38,8 +59,8 @@ public class UserName : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
-    public void ChangeUserName(string newName)
+    public void ChangeUserNameServerRpc(string newName)
     {
-        networkUserName.Value = FixedString64Bytes.FromString(newName);
+        networkUserName.Value = new FixedString64Bytes(newName);
     }
 }

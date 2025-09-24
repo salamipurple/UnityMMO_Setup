@@ -56,4 +56,9 @@ public class RelayClient : MonoBehaviour
             Debug.LogError($"Client: Failed to join Relay or start client: {e.Message}\n{e.StackTrace}");
         }
     }
+
+    public void SetUserName(string newName)
+    {
+        userName = newName;
+    }
 }
