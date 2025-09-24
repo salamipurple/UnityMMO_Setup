@@ -13,7 +13,7 @@ public class UserName : NetworkBehaviour
 
     public void Awake()
     {
-        if (GameObject.Find("NameInputText") != null && userNameInput == null)
+        if (GameObject.Find("NameInputText") != null && userNameInput == null && IsOwner)
         {
             userNameInput = GameObject.Find("NameInputText").GetComponent<TextMeshProUGUI>();
         }
@@ -21,6 +21,8 @@ public class UserName : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        if (!IsOwner) return;
+
         // Run existing logic in base method
         base.OnNetworkSpawn();
 
