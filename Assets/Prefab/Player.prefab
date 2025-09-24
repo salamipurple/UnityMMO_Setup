@@ -238,7 +238,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2525776264279336021, guid: 9c1e73eb6f4b3412f95a2b24022fb9dc, type: 3}
       propertyPath: m_text
-      value: solomon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4168338575772659690, guid: 9c1e73eb6f4b3412f95a2b24022fb9dc, type: 3}
       propertyPath: m_Pivot.x

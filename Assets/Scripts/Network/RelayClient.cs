@@ -12,10 +12,9 @@ public class RelayClient : MonoBehaviour
     [SerializeField] TextMeshProUGUI joinCodeInput;
     [SerializeField] private string userName = "Client";
 
-    void Update()
+    void SetJoinCode()
     {
-        //joinCode = System.Text.RegularExpressions.Regex.Replace(joinCodeInput.text.Trim().ToUpper(), "[^A-Z0-9]", "");
-
+        joinCode = System.Text.RegularExpressions.Regex.Replace(joinCodeInput.text.Trim().ToUpper(), "[^A-Z0-9]", "");
     }
     [ContextMenu("Join Relay Game")]
     public async void JoinRelay()

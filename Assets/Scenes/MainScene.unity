@@ -1235,7 +1235,7 @@ GameObject:
   - component: {fileID: 843491145113527167}
   - component: {fileID: 6025929769692767954}
   m_Layer: 5
-  m_Name: Text
+  m_Name: JoinCodeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2591,9 +2591,9 @@ RectTransform:
   - {fileID: 7262367965100124183}
   m_Father: {fileID: 1899067532}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 200, y: 0}
   m_SizeDelta: {x: 250, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7167382384959075685
