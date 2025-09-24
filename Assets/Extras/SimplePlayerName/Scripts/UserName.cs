@@ -8,7 +8,7 @@ public class UserName : NetworkBehaviour
     [SerializeField] TextMeshPro userNameDisplay;
 
     public static string userName;
-    [SerializeField] private NetworkVariable<FixedString64Bytes> networkUserName = new NetworkVariable<FixedString64Bytes>("userName");
+    [SerializeField] private NetworkVariable<FixedString64Bytes> networkUserName = new NetworkVariable<FixedString64Bytes>("USERNAME");
 
     public override void OnNetworkSpawn()
     {
@@ -35,5 +35,11 @@ public class UserName : NetworkBehaviour
     {
         // Update the user name display for everyone
         userNameDisplay.text = newValue.ToString();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void ChangeUserName(string newName)
+    {
+        networkUserName.Value = FixedString64Bytes.FromString(newName);
     }
 }

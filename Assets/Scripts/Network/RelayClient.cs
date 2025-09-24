@@ -10,6 +10,7 @@ public class RelayClient : MonoBehaviour
 {
     public string joinCode = "C86DGQ"; // Replace or assign dynamically
     [SerializeField] TextMeshProUGUI joinCodeInput;
+    [SerializeField] private string userName = "Client";
 
     void Update()
     {

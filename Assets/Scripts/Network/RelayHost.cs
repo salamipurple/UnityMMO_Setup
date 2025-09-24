@@ -11,6 +11,7 @@ public class RelayHost : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI joinCodeDisplay;
     [SerializeField] public string joinCode;
+    [SeralizeField] private string userName = "Host";
     void Awake()
     {
         if (NetworkManager.Singleton != null)
@@ -115,6 +116,8 @@ public class RelayHost : MonoBehaviour
 
             NetworkManager.Singleton.StartHost();
             Debug.Log($"Host: Relay server started and listening. IP: {alloc.RelayServer.IpV4}, Port: {alloc.RelayServer.Port}");
+
+            
         }
         catch (RelayServiceException e)
         {
