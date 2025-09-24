@@ -32,12 +32,14 @@ public class UserName : NetworkBehaviour
             networkUserName = new NetworkVariable<FixedString64Bytes>(userNameInput.text);
             // Ensure the user name display is up-to-date when a client joins
             userNameDisplay.text = networkUserName.Value.ToString();
+            ChangeUserNameServerRpc(userNameInput.text);
         }
         else
         {
             networkUserName = new NetworkVariable<FixedString64Bytes>("NO NAME");
             // Ensure the user name display is up-to-date when a client joins
-            userNameDisplay.text = networkUserName.Value.ToString(); 
+            userNameDisplay.text = networkUserName.Value.ToString();
+            ChangeUserNameServerRpc(networkUserName.Value.ToString());
         }
     }
 
@@ -59,6 +61,7 @@ public class UserName : NetworkBehaviour
         // Update the user name display for everyone
         userNameDisplay.text = newValue.ToString();
     }
+
 
     [ServerRpc(RequireOwnership = false)]
     public void ChangeUserNameServerRpc(string newName)
