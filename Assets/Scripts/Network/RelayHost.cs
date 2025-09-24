@@ -11,7 +11,7 @@ public class RelayHost : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI joinCodeDisplay;
     [SerializeField] public string joinCode;
-    [SeralizeField] private string userName = "Host";
+    [SerializeField] private string userName = "Host";
     void Awake()
     {
         if (NetworkManager.Singleton != null)
