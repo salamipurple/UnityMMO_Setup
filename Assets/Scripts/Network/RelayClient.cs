@@ -9,13 +9,12 @@ using TMPro;
 public class RelayClient : MonoBehaviour
 {
     public string joinCode = "C86DGQ"; // Replace or assign dynamically
-    [SerializeField] TextMeshProUGUI joinCodeInput;
-    [SerializeField] private string userName = "Client";
 
-    void SetJoinCode()
+    public void SetJoinCode(string code)
     {
-        joinCode = System.Text.RegularExpressions.Regex.Replace(joinCodeInput.text.Trim().ToUpper(), "[^A-Z0-9]", "");
+        joinCode = System.Text.RegularExpressions.Regex.Replace(code.Trim().ToUpper(), "[^A-Z0-9]", "");
     }
+
     [ContextMenu("Join Relay Game")]
     public async void JoinRelay()
     {
@@ -54,10 +53,5 @@ public class RelayClient : MonoBehaviour
         {
             Debug.LogError($"Client: Failed to join Relay or start client: {e.Message}\n{e.StackTrace}");
         }
-    }
-
-    public void SetUserName(string newName)
-    {
-        userName = newName;
     }
 }
