@@ -33,3 +33,6 @@ select organization, create new cloud project, link project
 
 + add a player steps on item to increase network variable
 + get player names working
+
+## notes
++ 1) Awake, 2) OnNetworkSpawn, 3) Start
