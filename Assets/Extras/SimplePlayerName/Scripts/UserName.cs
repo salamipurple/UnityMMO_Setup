@@ -10,6 +10,8 @@ public class UserName : NetworkBehaviour
     [SerializeField] TextMeshPro userNameDisplay;    // The 3D text that shows above the player (visible to all)
     private TextMeshProUGUI userNameInput;           // Reference to UI input field (found at runtime)
     public static string userName;                   // Static storage for local player name (optional)
+    [SerializeField] private GameObject playerBody;
+    [SerializeField] private float yOffset = 2.5f;
     
     // NetworkVariable: A special variable that automatically synchronizes across all clients
     // - FixedString64Bytes: A network-safe string type (max 64 bytes)
@@ -19,6 +21,11 @@ public class UserName : NetworkBehaviour
     // This ensures only the server can modify names, preventing cheating/conflicts
     private NetworkVariable<FixedString64Bytes> networkUserName = new NetworkVariable<FixedString64Bytes>(
         default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
+    void LateUpdate()
+    {
+        transform.position = new Vector3(transform.position.x, playerBody.transform.position.y + yOffset, transform.position.z);    
+    }
 
     // Awake() runs once when the object is created, before Start()
     // This is the BEST place to subscribe to NetworkVariable changes because:
