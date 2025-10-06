@@ -36,3 +36,5 @@ select organization, create new cloud project, link project
 
 ## notes
 + 1) Awake, 2) OnNetworkSpawn, 3) Start
++ player doesnt have time to get the name from input if menu removed to quickly
++ player doesnt appear. i think the mesh got deleted when we added a TMPro element to the body
