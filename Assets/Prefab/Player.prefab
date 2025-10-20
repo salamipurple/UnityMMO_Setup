@@ -453,3 +453,4 @@ MonoBehaviour:
   userNameDisplay: {fileID: 6174214152300017492}
   playerBody: {fileID: 6433417499536924803}
   yOffset: 2.5
+  infoPanel: {fileID: 1543393113155276395, guid: e14a8f423f9594d7daf14fe322d34d50, type: 3}

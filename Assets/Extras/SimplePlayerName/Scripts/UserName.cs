@@ -12,7 +12,6 @@ public class UserName : NetworkBehaviour
     public static string userName;                   // Static storage for local player name (optional)
     [SerializeField] private GameObject playerBody;
     [SerializeField] private float yOffset = 2.5f;
-    [SerializeField] private GameObject infoPanel;
 
     // NetworkVariable: A special variable that automatically synchronizes across all clients
     // - FixedString64Bytes: A network-safe string type (max 64 bytes)
@@ -89,7 +88,7 @@ public class UserName : NetworkBehaviour
                 SetUserNameServerRpc("Player");
             }
 
-            infoPanel.SetActive(false);
+            GameObject.Find("Server Info").SetActive(false);
         }
     }
 
