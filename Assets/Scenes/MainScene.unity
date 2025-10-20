@@ -1371,6 +1371,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Name Input
       objectReference: {fileID: 0}
+    - target: {fileID: 5650398390159734446, guid: 1d4b6f57e416d41b4a5111eb1039a4cf, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650398390159734446, guid: 1d4b6f57e416d41b4a5111eb1039a4cf, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5650398390159734446, guid: 1d4b6f57e416d41b4a5111eb1039a4cf, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1388,6 +1400,10 @@ PrefabInstance:
       propertyPath: NetworkConfig.PlayerPrefab
       value: 
       objectReference: {fileID: 2366070882508665927, guid: 8c5407dba793841238a24367b1394177, type: 3}
+    - target: {fileID: 5558638643990368424, guid: a1879ef9d1cec465e9fffe38539bf9f5, type: 3}
+      propertyPath: infoPanel
+      value: 
+      objectReference: {fileID: 182194576}
     - target: {fileID: 5778649848728053242, guid: a1879ef9d1cec465e9fffe38539bf9f5, type: 3}
       propertyPath: m_Name
       value: RelayManager
@@ -1432,6 +1448,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6605481197580926308, guid: a1879ef9d1cec465e9fffe38539bf9f5, type: 3}
+      propertyPath: infoPanel
+      value: 
+      objectReference: {fileID: 182194576}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1451,7 +1471,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1778103099158318673, guid: e14a8f423f9594d7daf14fe322d34d50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1778103099158318673, guid: e14a8f423f9594d7daf14fe322d34d50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -1483,7 +1503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1937538014546025435, guid: e14a8f423f9594d7daf14fe322d34d50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1937538014546025435, guid: e14a8f423f9594d7daf14fe322d34d50, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode

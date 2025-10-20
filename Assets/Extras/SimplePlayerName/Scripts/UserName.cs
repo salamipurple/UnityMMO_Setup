@@ -73,20 +73,20 @@ public class UserName : NetworkBehaviour
         {
             // Get the TextMeshProUGUI component from the found object
             userNameInput = nameInputObject.GetComponent<TextMeshProUGUI>();
-        }
 
-        // Request the server to set our player name (like PlayerMove does)
-        // This is the PROPER way to set networked data - always go through the server
-        if (userNameInput != null && !string.IsNullOrEmpty(userNameInput.text))
-        {
-            // User has entered a name in the UI - use that
-            SetUserNameServerRpc(userNameInput.text);
-        }
-        else
-        {
-            // No input found or input is empty - use a default name
-            // This prevents players from having blank or "NO NAME" names
-            SetUserNameServerRpc("Player");
+            // Request the server to set our player name (like PlayerMove does)
+            // This is the PROPER way to set networked data - always go through the server
+            if (!string.IsNullOrEmpty(userNameInput.text))
+            {
+                // User has entered a name in the UI - use that
+                SetUserNameServerRpc(userNameInput.text);
+            }
+            else
+            {
+                // No input found or input is empty - use a default name
+                // This prevents players from having blank or "NO NAME" names
+                SetUserNameServerRpc("Player");
+            }
         }
     }
 

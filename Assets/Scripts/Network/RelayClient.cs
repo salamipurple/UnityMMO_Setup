@@ -32,11 +32,14 @@ public class RelayClient : MonoBehaviour
     // ============================================================================
     // JOIN CODE MANAGEMENT
     // ============================================================================
-    
+
     // The join code that clients use to connect to a relay session.
     // Join codes are 6-character alphanumeric strings (e.g., "C86DGQ").
     // This should be provided by the host player who created the relay session.
     public string joinCode = "C86DGQ"; // Replace or assign dynamically
+    
+    [SerializeField] private GameObject infoPanel;
+
 
     // Sanitizes and sets the join code for connecting to a relay session.
     // This method ensures the join code is in the correct format by:
@@ -128,6 +131,8 @@ public class RelayClient : MonoBehaviour
 
             // Provide user feedback that connection attempt has started
             Debug.Log("Client: Relay client started and attempting to connect to host.");
+
+            infoPanel.SetActive(false);
         }
         catch (System.Exception e)
         {
