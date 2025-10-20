@@ -47,8 +47,6 @@ public class RelayHost : MonoBehaviour
     // Display name for the host player in the multiplayer session.
     // This can be used for player identification and UI display purposes.
     [SerializeField] private string userName = "Host";
-    
-    [SerializeField] private GameObject infoPanel;
 
     // ============================================================================
     // LIFECYCLE MANAGEMENT
@@ -240,8 +238,6 @@ public class RelayHost : MonoBehaviour
             // 3. Begin the host-side networking session
             NetworkManager.Singleton.StartHost();
             Debug.Log($"Host: Relay server started and listening. IP: {alloc.RelayServer.IpV4}, Port: {alloc.RelayServer.Port}");
-
-            infoPanel.SetActive(false);
 
             // The host is now ready to accept client connections!
             // Clients can use the join code to connect to this relay session.

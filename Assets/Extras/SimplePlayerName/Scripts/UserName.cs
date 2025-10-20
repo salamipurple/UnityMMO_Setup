@@ -12,7 +12,8 @@ public class UserName : NetworkBehaviour
     public static string userName;                   // Static storage for local player name (optional)
     [SerializeField] private GameObject playerBody;
     [SerializeField] private float yOffset = 2.5f;
-    
+    [SerializeField] private GameObject infoPanel;
+
     // NetworkVariable: A special variable that automatically synchronizes across all clients
     // - FixedString64Bytes: A network-safe string type (max 64 bytes)
     // - default: Initial value is empty/default when object spawns
@@ -21,7 +22,7 @@ public class UserName : NetworkBehaviour
     // This ensures only the server can modify names, preventing cheating/conflicts
     private NetworkVariable<FixedString64Bytes> networkUserName = new NetworkVariable<FixedString64Bytes>(
         default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
-
+    
     void LateUpdate()
     {
         transform.position = new Vector3(transform.position.x, playerBody.transform.position.y + yOffset, transform.position.z);    
@@ -87,6 +88,8 @@ public class UserName : NetworkBehaviour
                 // This prevents players from having blank or "NO NAME" names
                 SetUserNameServerRpc("Player");
             }
+
+            infoPanel.SetActive(false);
         }
     }
 
