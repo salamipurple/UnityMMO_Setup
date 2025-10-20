@@ -88,7 +88,13 @@ public class UserName : NetworkBehaviour
                 SetUserNameServerRpc("Player");
             }
 
-            GameObject.Find("Server Info").SetActive(false);
+            if (GameObject.Find("Server Info") != null)
+            {
+                GameObject.Find("Server Info").SetActive(false);
+            } else
+            {
+                Debug.LogWarning("Server panel element not found in scene.");
+            }
         }
     }
 
